@@ -1,5 +1,8 @@
 <?php 
 session_start();
+if(!$_SESSION['unique_id'] ){
+    header('Location: login.php');
+}
     if($_SESSION['unique_id'] == '815362009'){
         header("Location: adminhome.php");
     }
