@@ -1,3 +1,9 @@
+<?php 
+session_start();
+if($_SESSION['unique_id'] !== '815362009'){
+    header("Location: home.php");
+}
+?>
 
 <h2>Home for admin</h2><br>
 
@@ -16,12 +22,10 @@
 ?>
 
 <style>
-li{
-    overflow: hidden;
-}
+
 </style>
 
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+<input type="text" id="myInput"  onkeyup="searchName()" placeholder="Search for names.." title="Type in a name">
 
 <ul id="myUL">
     <?php
@@ -49,7 +53,7 @@ li{
 <script>
 
 
-function myFunction() {
+function searchName() {
     var input, filter, ul, li, a, i, txtValue;
     input = document.getElementById("myInput");
     filter = input.value.toUpperCase();
@@ -60,14 +64,13 @@ function myFunction() {
         a = li[i].getElementsByTagName("a")[0];
         txtValue = a.textContent || a.innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "block";
+            li[i].style.display = "";
         } else {
             li[i].style.display = "none";
-            // a.style.display="none";
         }
     }
-
 }
+
 
 
 </script>
