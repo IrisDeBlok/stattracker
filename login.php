@@ -4,6 +4,9 @@
     header("location: home.php");
   }
 ?>
+    <script src=
+        "https://www.google.com/recaptcha/api.js" async defer>
+    </script>
    <style>
         .logo{
              position: absolute;
@@ -16,7 +19,7 @@
   <div class="wrapper">
     <section class="form login">
       <h1>Login</h1>
-      <form action="#" method="POST" enctype="multipart/form-data" autocomplete="off">
+      <form action="action.php" method="POST" enctype="multipart/form-data" autocomplete="off">
         <div class="error-text"></div>
         <div class="form-group">
           <label>Email Address</label><br>
@@ -27,8 +30,13 @@
           <input class="form-control" type="password" name="password" placeholder="Enter your password" required>
           <i class="fas fa-eye"></i>
         </div>
+                <!-- div to show reCAPTCHA -->
+        <div class="g-recaptcha"
+          data-sitekey="6Lez8WAiAAAAAIkZgkK1Q4XAea0zUGkthdHJnKGf">
+        </div>
+
         <div class="field button">
-          <input type="submit" class="btn" name="submit" value="Login">
+          <input type="submit" class="btn" name="submit_btn" value="Login">
         </div>
       </form>
       <div class="link">Nog geen account? <a href="index.php">Account aanmaken</a></div>

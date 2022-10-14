@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if(!$_SESSION['unique_id'] ){
+if(!isset($_SESSION['unique_id'])){
     header('Location: login.php');
 }
     if($_SESSION['unique_id'] == '815362009'){

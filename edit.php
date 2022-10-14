@@ -1,5 +1,8 @@
 <?php
  session_start();
+ if(!isset($_SESSION['unique_id'])){
+    header('Location: login.php');
+}
  include "php/config.php";
 
 
@@ -37,12 +40,12 @@ $row = mysqli_fetch_assoc($sql);
 if($sql2)
     { 
         /*Successful*/
-        header('location:home.php');
+        header('location:profile.php');
     }
     else
     {
         /*sorry your profile is not update*/
-        header('location:profile.php');
+        header('location:home.php');
     }
  }
  else

@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(!isset($_SESSION['unique_id'])){
+    header('Location: login.php');
+}
 
     include "php/config.php";
 
@@ -18,8 +21,14 @@ session_start();
     E-mail: <input type="text" name="email" value="<?php echo $row['email']; ?>" disabled></br></br>
     Wachtwoord: <input type="password" name="password" value="<?php echo $row['password']; ?>" disabled></br></br>
 
+    
+    Goals: <input type="text" name="name"  disabled><br><br>
+        Assits: <input type="text" name="name" disabled><br><br>
+
     <a href="edit.php"><button>Profiel bewerken</button></a>
+    
 
     </form>
+<a href="home.php"><button>terug</button></a>
 
  
