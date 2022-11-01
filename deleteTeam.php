@@ -25,16 +25,21 @@ try{
     echo "Kon geen verbinding maken";
 }
 
-$delete = array("id"=>$_GET["id"]);
-$sql = "SELECT * FROM `signup` WHERE `signup`.`id` = :id";
+$delete = array("club"=>$_GET["club"]);
+$sql = "SELECT * FROM `team_table` WHERE `team_table`.`club` = :club";
 $stmt = $verbinding->prepare($sql);
 $stmt->execute($delete);
 $result = $stmt->fetch();
 
 if(isset($_POST["delete"])){
 
-    $delete = array("id"=>$_GET["id"]);
-    $sql = "DELETE FROM `signup` WHERE `signup`.`id` = :id";
+    $delete = array("club"=>$_GET["club"]);
+    $sql = "DELETE FROM `team_table` WHERE `team_table`.`club` = :club";
+    $stmt = $verbinding->prepare($sql);
+    $stmt->execute($delete);
+
+    $delete = array("club"=>$_GET["club"]);
+    $sql = "DELETE FROM `teams` WHERE `teams`.`club` = :club";
     $stmt = $verbinding->prepare($sql);
     $stmt->execute($delete);
 
@@ -50,7 +55,7 @@ if(isset($_POST["delete"])){
 <h2 class="titel">Speler of team zoeken</h2>
 <div class="center">
     <div class="buttons">
-        <p>Weet u zeker dat u de speler <span class="highlight"><?php echo $result["name"]; ?></span> wilt verwijderen?</p>
+        <p>Weet u zeker dat u de speler <span class="highlight"><?php echo $result["club"]; ?></span> wilt verwijderen?</p>
         <form action="" class="knoppen" method="post">
             <input type="submit" class="cancel" id="delete" name="delete" value="Verwijderen">
         </form>

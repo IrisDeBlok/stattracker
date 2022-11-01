@@ -1,19 +1,13 @@
 <?php 
   session_start();
   if(isset($_SESSION['unique_id'])){
-    header("location: home.php");
+    header("location: homepage.php");
   }
 ?>
     <script src=
         "https://www.google.com/recaptcha/api.js" async defer>
     </script>
-   <style>
-        .logo{
-             position: absolute;
-             width: 12%;
-             top: 0
-         }
-    </style>
+<link href="style/index.css" rel="stylesheet">
 <body>
   <!-- <div class="container"> -->
   <div class="wrapper">
@@ -23,11 +17,11 @@
         <div class="error-text"></div>
         <div class="form-group">
           <label>Email Address</label><br>
-          <input class="form-control" type="text" name="email" placeholder="Enter your email" required>
+          <input class="form-control" type="text" name="email" required>
         </div>
         <div class="form-group">
           <label>Password</label><br>
-          <input class="form-control" type="password" name="password" placeholder="Enter your password" required>
+          <input class="form-control" type="password" name="password" required>
           <i class="fas fa-eye"></i>
         </div>
                 <!-- div to show reCAPTCHA -->

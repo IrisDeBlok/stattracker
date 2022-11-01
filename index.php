@@ -1,11 +1,11 @@
 <?php 
   session_start();
   if(isset($_SESSION['unique_id'])){
-    header("location: home.php");
+    header("location: homepage.php");
   }
 ?>
 
-
+<link href="style/index.css" rel="stylesheet" >
 
 <body>
   <!-- <div class="container"> -->
@@ -16,16 +16,22 @@
         <div class="error-text"></div>
           <div class="form-group">
             <label>First Name</label><br>
-            <input type="text" name="fname" class="form-control" placeholder="First name" required>
+            <input type="text" name="fname" class="form-control" required>
           </div>
         <div class="form-group">
           <label>Email Address</label><br>
-          <input type="text" name="email" class="form-control" placeholder="Enter your email" required>
+          <input type="text" name="email" class="form-control" required>
         </div>
         <div class="form-group">
           <label>Password</label><br>
-          <input type="password" name="password" class="form-control" placeholder="Enter new password" required>
-          <i class="fas fa-eye"></i>
+          <input type="password" name="password" class="form-control" required>
+         <br>
+        </div>
+        <div class="form-group">
+          <input type="hidden" name="assist" class="form-control" value="0" required>
+        </div>
+        <div class="form-group">
+          <input type="hidden" name="goals" class="form-control" value="0" required>
         </div>
         <div class="field button">
           <input type="submit" class="btn" name="submit" value="Sign in">
