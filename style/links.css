@@ -1,0 +1,363 @@
+body{
+ margin: 0;
+ padding: 0;
+ /* background-color: rgb(201, 201, 201); */
+       
+ font-family: 'Poppins', sans-serif;
+ color: black;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(33, 33, 254);
+    padding: 0px 80px;
+}
+
+.myInput{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#myInput{
+    width: 30%;
+    padding: 15px;
+    background-color: rgb(33, 33, 254);
+    color: white;
+    border: none;
+    /* margin-top: 5%; */
+}
+
+li {
+ list-style: none;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+.spelers{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    margin-bottom: 5px;
+    background-color: rgb(33, 33, 254);
+}
+
+#myUL{
+    width: 40%;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.terug{
+    border: none;
+    background-color: rgb(33, 33, 254);
+    padding: 5px;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.form-control{
+    border: none;
+    padding: 10px;
+    background-color: rgb(33, 33, 254);
+    margin-bottom: 15px;
+    color: white;
+    /* text-align: center; */
+}
+
+.info{
+    margin-top: 5%;
+}
+
+.toevoegen{ 
+    display: flex;
+    justify-content: center;
+}
+
+#save_select{
+    margin-bottom: 15px;
+}
+
+.btn{
+    border: none;
+    background-color: rgb(33, 33, 254);
+    padding: 10px;
+    color: white;
+}
+
+.btn:active{
+    border: none;
+    background-color: rgb(255, 0, 0);
+    padding: 10px;
+}
+
+.titel{
+    margin-top: 5%;
+    text-align: center;
+    color: black;
+}
+
+label{
+    color: black;
+}
+
+table{
+    color: black;
+}
+
+.uitslag{
+    display: flex;
+    justify-content: center;
+}
+
+#number{
+    width: 30%;
+    text-align: center;
+    align-content: center;
+}
+
+.points{
+    display: flex;
+    justify-content: center;
+}
+
+div{
+    color: black;
+}
+
+.uitslagen{
+    display: flex;
+    justify-content: center;
+}
+
+.thuisclub{
+    padding: 15px;
+}
+
+.padding{
+    text-align:center;
+}
+
+li span{
+    display: none;
+}
+
+li:hover span{
+    color: white;
+    displaY: block;
+}
+
+.zoekInfo{
+    display: flex;
+    flex-direction: column;
+}
+
+.goals{
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    font-size: 55px;
+}
+
+.goal{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scores{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+.center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.center input{
+    width: 25%;
+    text-align: center;
+    padding: 10px;
+    background-color:rgb(33, 33, 254);
+    color: white;
+    border: none;
+}
+
+
+.buttons{
+    align-items: center;
+}
+.buttons button{
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid rgb(33, 33, 254);
+    background-color: rgb(33, 33, 254);
+}
+.buttons input{
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: 1px solid rgb(33, 33, 254);
+    background-color: rgb(33, 33, 254);
+}
+
+.knoppen{
+    display: flex;
+    justify-content: center;
+}
+
+#bin{
+    color: black;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+#team{
+margin-left: 1.5%;
+}
+
+.teamlink{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#names{
+    text-align: center;
+}
+
+.class{
+    display: flex;
+    justify-content: center;
+}
+
+.club{
+    margin: 15px;
+}
+
+#toegevoegd{
+    height: 5%;
+    margin-top: 1%;
+}
+
+.bulkdelete{
+    background-color: rgb(33, 33, 254);
+    color: white;
+    border: none;
+    padding: 10px;
+}
+
+.orderedTeams{
+    text-align: center;
+}
+
+.tableRow{
+    padding: 8px;
+}
+
+.bins{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.userClubs{
+    color: white;
+    background-color:rgb(33, 33, 254);
+    width: 90%;
+    /* height: 10px; */
+    text-align: center;
+    padding: 5px;
+margin-bottom: 15px;
+}
+
+#userClubs{
+    /* background-color:rgb(33, 33, 254); */
+    width: 38%;
+    margin-left: 13%;
+}
+
+.userClubs2{
+    color: white;
+    background-color:rgb(33, 33, 254);
+    width: 64%;
+    /* height: 10px; */
+    text-align: center;
+    padding: 5px;
+margin-bottom: 15px;
+}
+
+#userClubs2{
+    /* background-color:rgb(33, 33, 254); */
+    width: 27%;
+    /* margin-left: 14%; */
+}
+
+.tdclass{
+    width: 66%;
+}
+
+.centerselect{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.centerselect select{
+    height: 36px;
+    margin-right: 5px;
+    background-color: rgb(33, 33, 254);
+    color:white;
+    border: none;
+}
+.centerselect button{
+    height: 30px;
+    background-color: rgb(33, 33, 254);
+    color:white;
+    border: none;
+}
+
+.addTeam{
+    margin-bottom: 10px;
+}
+
+.goalnumbers{
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.goalnumbers a{
+    width: 25%;
+}
+
+.goalteams{
+    color: white;
+    background-color:rgb(33, 33, 254);
+    /* width: 90%; */
+    /* height: 10px; */
+    text-align: center;
+    padding: 5px;
+margin-bottom: 15px;
+}

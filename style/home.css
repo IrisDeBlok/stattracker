@@ -1,0 +1,70 @@
+body{
+ margin: 0;
+ padding: 0;
+ /* background-color: rgb(201, 201, 201); */
+    
+ font-family: 'Poppins', sans-serif;
+ color: white;
+ width: 100%;
+}
+
+header{
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ background-color: rgb(33, 33, 254);
+ padding: 0px 80px;
+}
+
+.titel{
+    margin-top: 5%;
+    text-align: center;
+    color: black;
+}
+
+#uitloggen{
+ color: white;
+ text-decoration: none;
+ margin-right: 30px;
+}
+
+.uitloggen{
+    display: flex;
+    justify-content: flex-end;
+}
+   
+.links{
+ width: 10%;
+ height: 5%;
+ padding: 50px;
+ color: white;
+ background-color: rgb(33, 33, 254);
+ text-decoration: none;
+ text-align: center;
+ margin-top: 10%;
+}
+
+#links{
+ display: flex;
+ justify-content: space-evenly;
+}
+
+.center{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.center select{
+    height: 30px;
+    margin-right: 5px;
+    background-color: rgb(33, 33, 254);
+    color:white;
+    border: none;
+}
+.center button{
+    height: 30px;
+    background-color: rgb(33, 33, 254);
+    color:white;
+    border: none;
+}
