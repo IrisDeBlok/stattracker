@@ -1,4 +1,4 @@
-<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<script src="https://kit.fontawesome.com/066abe0b65.js" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
@@ -47,7 +47,7 @@
                 }
 ?>
 
-                    <li class='spelers'><div class='zoekInfo'><a href='profile2.php?page=profiel&id=<?php echo $row["id"]; ?>'><?php echo $row["name"]; ?></a><span> Goals: <?php echo $rows['allGoals']; ?><br> Assists: <?php echo $rows['allAssists']; ?></span></div><br></li>
+                    <li class='spelers'><div class="hallo"><i class="fa-regular fa-futbol"></i><div class='zoekInfo'><a href='profile2.php?page=profiel&id=<?php echo $row["id"]; ?>'><?php echo $row["name"]; ?></a><span> Goals: <?php echo $rows['allGoals']; ?><br> Assists: <?php echo $rows['allAssists']; ?></span></div></div><br></li>
             <?php
                 }
         } else {
@@ -58,9 +58,13 @@
 $results = $conn->query($sql);
 
  foreach($results as $rows):
+        $select = mysqli_query($conn, "SELECT SUM(goals) AS allGoalsTeams, SUM(assist) AS allAssistsTeams FROM goals INNER JOIN team_table ON goals.team = team_table.club WHERE goals.team = '{$rows['club']}'");
+        if(mysqli_num_rows($select) > 0){
+        $row = mysqli_fetch_assoc($select);
+        }
  ?>
 
-<li class='spelers'><a href='teamSpelersUser.php?page=team&TeamId=<?php echo $rows["TeamId"] ?>&club=<?php echo $rows['club'];?>'><?php echo $rows["club"]; ?></a></li> 
+<li class='spelers'><div class="hallo"><i class="fa-solid fa-people-group"></i><div class='zoekInfo'><a href='teamSpelersUser.php?page=team&TeamId=<?php echo $rows["TeamId"] ?>&club=<?php echo $rows['club'];?>'><?php echo $rows["club"]; ?></a><br><span> Goals:  <?php echo $row['allGoalsTeams']; ?> <br> Assists: <?php echo $row['allAssistsTeams']; ?></span></div></div><br></li> 
 
 <?php endforeach; ?>
     

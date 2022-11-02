@@ -43,6 +43,11 @@ if(isset($_POST["delete"])){
     $stmt = $verbinding->prepare($sql);
     $stmt->execute($delete);
 
+    $delete = array("club"=>$_GET["club"]);
+    $sql = "DELETE FROM `goals` WHERE `goals`.`team` = :club";
+    $stmt = $verbinding->prepare($sql);
+    $stmt->execute($delete);
+
     header("Location:zoekSpeler.php");
 }
 

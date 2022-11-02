@@ -37,7 +37,7 @@ if(!isset($_SESSION['unique_id'])){
 <form action="edit.php" method="post">
 <div class="center">
     <?php foreach($result as $row): ?>
-    Naam: <input type="text" name="name" placeholder="<?php echo $row['name']; ?>" disabled></br></br>
+    Naam: <input type="text" name="name" placeholder="<?php echo $row['name']; ?>" disabled></br>
     E-mail: <input type="text" name="email" placeholder="<?php echo $row['email']; ?>" disabled></br>
     <?php
     
@@ -54,7 +54,7 @@ $result = $conn->query($select);
 foreach($result as $rows):
     ?>
     <div class="goalnumbers">
-        <a href='teamSpelersUser+-.php?page=team&TeamId=<?php echo $rows["TeamId"] ?>&club=<?php echo $rows['club'];?>' id='teamlink'> 
+        <a href='teamSpelersUser.php?page=team&TeamId=<?php echo $rows["TeamId"] ?>&club=<?php echo $rows['club'];?>' id='teamlink'> 
             <div class='goalteams'><?php echo $rows["team"]; ?></div>
          </a><br>
         <div class='scores'>

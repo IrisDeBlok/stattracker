@@ -61,8 +61,6 @@ if(isset($_POST['random']))
     $checkbox = $_POST['randomnames'];
     $checkBox = $_POST['unique_id'];
     $club = $_POST['club'];
-    $sql = "INSERT INTO team_table(club) VALUE('$club')";
-    $result = mysqli_query($dbc, $sql);
 
 for($i=0;$i<count($checkbox);$i++){
 
@@ -71,6 +69,16 @@ $unique_id = $checkBox[$i];
 $sql = "INSERT INTO teams(naam, unique_id, club) VALUE('$del_id', '$unique_id', '$club')";
 $result = mysqli_query($dbc, $sql);
 }
+for($i=0;$i<count($checkbox);$i++){
+
+$del_id = $checkbox[$i];
+$unique_id = $checkBox[$i];
+$sql2 = "INSERT INTO goals(naam, unique_id, team) VALUE('$del_id', '$unique_id', '$club')";
+$results = mysqli_query($dbc, $sql2);
+}
+
+$sql = "INSERT INTO team_table(club) VALUE('$club')";
+$result = mysqli_query($dbc, $sql);
 
 // if successful redirect to delete_multiple.php 
 if($result){

@@ -1,4 +1,5 @@
-<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<script src="https://kit.fontawesome.com/066abe0b65.js" crossorigin="anonymous"></script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
@@ -56,7 +57,7 @@ while ($row=mysqli_fetch_array($result)) {
     $rows = mysqli_fetch_assoc($select);
     }
 ?>
-    <li class='spelers'><input name='checkbox[]'  type='checkbox' class="checkbox" id="checkbox" value='<?php echo $row['id']; ?>'><div class='zoekInfo'><a href='profileforadmin.php?page=profiel&id=<?php echo $row["id"]; ?>'><?php echo $row["name"]; ?></a><span> Goals:  <?php echo $rows['allGoals']; ?> <br> Assists: <?php echo $rows['allAssists']; ?></span></div><br><a href='updateSpelerAdmin.php?page=edit&id=<?php echo $row["id"]; ?>' class='adminupdate'><span>Verander gegevens</span></a><a href='delete.php?page=delete&id=<?php echo $row["id"];?>' id='names'><i class='fas fa-trash-alt'></i></a></li>
+    <li class='spelers'><div class="hallo"><input name='checkbox[]'  type='checkbox' class="checkbox" id="checkbox" value='<?php echo $row['id']; ?>'><i class="fa-regular fa-futbol"></i><div class='zoekInfo'><a href='profileforadmin.php?page=profiel&id=<?php echo $row["id"]; ?>'><?php echo $row["name"]; ?></a><span> Goals:  <?php echo $rows['allGoals']; ?> <br> Assists: <?php echo $rows['allAssists']; ?></span></div><br><a href='updateSpelerAdmin.php?page=edit&id=<?php echo $row["id"]; ?>' class='adminupdate'><span>Verander gegevens</span></a></div><a href='delete.php?page=delete&id=<?php echo $row["id"];?>' id='names'><i class='fas fa-trash-alt'></i></a></li>
 <?php    
 }
 
@@ -68,9 +69,14 @@ or die('Error querying database');
 $count=mysqli_num_rows($results);
 
 while ($rows=mysqli_fetch_array($results)) {
+    $select = mysqli_query($conn, "SELECT SUM(goals) AS allGoalsTeams, SUM(assist) AS allAssistsTeams FROM goals INNER JOIN team_table ON goals.team = team_table.club WHERE goals.team = '{$rows['club']}'");
+    if(mysqli_num_rows($select) > 0){
+    $row = mysqli_fetch_assoc($select);
+    }
  ?>
+ 
 
-<li class='spelers'><a href='teamSpelers.php?page=team&TeamId=<?php echo $rows["TeamId"] ?>&club=<?php echo $rows['club'];?>'><?php echo $rows["club"]; ?></a><a href='deleteTeam.php?page=delete&club=<?php echo $rows["club"];?>' id='names'><i class='fas fa-trash-alt'></i></a></li>   
+<li class='spelers'><div class="hallo"><i class="fa-solid fa-people-group"></i><div class="zoekInfo"><a href='teamSpelers.php?page=team&TeamId=<?php echo $rows["TeamId"] ?>&club=<?php echo $rows['club'];?>'><?php echo $rows["club"]; ?></a><span> Goals:  <?php echo $row['allGoalsTeams']; ?> <br> Assists: <?php echo $row['allAssistsTeams']; ?></span></div></div><a href='deleteTeam.php?page=delete&club=<?php echo $rows["club"];?>' id='names'><i class='fas fa-trash-alt'></i></a></li>   
 
 <?php } ?>
 <input name="delete" class="bulkdelete" id="bulkdelete" type="submit" value="Delete">

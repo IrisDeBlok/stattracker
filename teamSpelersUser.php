@@ -48,8 +48,13 @@ $rows = mysqli_fetch_assoc($select);
             $results = $conn->query($select);
 
             foreach($results as $row):
+                $select = mysqli_query($conn, "SELECT * FROM signup WHERE signup.name = '{$row['naam']}'");
+                if(mysqli_num_rows($select) > 0){
+                $rows = mysqli_fetch_assoc($select);
+                }
+    
             echo    "<tr>
-            <td class='tableRow'>". $row['naam'] . "</td>
+            <td class='tableRow'><a href='profile2.php?page=speler&id=" . $rows['id']. "'>". $row['naam'] . "</a></td>
                         <td class='tableRow'>". $row['goals'] . "</td>
                         <td class='tableRow'>". $row['assist'] . "</td>
                     </tr>";

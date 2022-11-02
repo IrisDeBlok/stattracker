@@ -47,10 +47,15 @@ $rows = mysqli_fetch_assoc($select);
             $select = "SELECT * FROM team_table INNER JOIN goals ON team_table.club = goals.team WHERE `team_table`.`TeamId` = {$_GET['TeamId']}";
             $results = $conn->query($select);
 
-            foreach($results as $row):
+            foreach($results as $row):   
+                $select = mysqli_query($conn, "SELECT * FROM signup WHERE signup.name = '{$row['naam']}'");
+                if(mysqli_num_rows($select) > 0){
+                $rows = mysqli_fetch_assoc($select);
+                }
+    
 
             echo    "<tr>
-            <td class='tableRow'>". $row['naam'] . "</td>
+            <td class='tableRow'><a href='profile2.php?page=speler&id=" . $rows['id']. "''>". $row['naam'] . "</a></td>
                         <td class='tableRow'>". $row['goals'] . "</td>
                         <td class='tableRow'>". $row['assist'] . "</td>
                         <td class='tableRow'><a style='color: black;' href='puntenToevoegen.php?page=toevoegen&id=" . $row['goals_id']. "'>Gegevens aanpassen</a></td>
